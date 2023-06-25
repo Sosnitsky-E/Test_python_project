@@ -1,0 +1,14 @@
+from pages.base_page import BasePage
+from .locators import BasketPageLocators
+
+
+class BasketPage(BasePage):
+    def click_top_basket_button(self):
+        self.find_element_and_click(BasketPageLocators.TOP_BASKET_BUTTON)
+    def check_if_basket_is_empty(self):
+        assert self.is_not_element_present(*BasketPageLocators.ITEMS_TO_BY), "The basket does not empty"
+
+    def check_text_about_basket_empty_is_present(self):
+        expected_text = self.browser.find_element(*BasketPageLocators.EMPTY_BASKET_TEXT).text
+        assert  expected_text == "Your basket is empty. Continue shopping", "The text about the basket being empty is " \
+                                                                            "missing."

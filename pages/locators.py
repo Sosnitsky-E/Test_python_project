@@ -10,6 +10,13 @@ class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 
+
+class BasketPageLocators:
+    TOP_BASKET_BUTTON = (By.CSS_SELECTOR, "a[class='btn btn-default']")
+    ITEMS_TO_BY = (By.CSS_SELECTOR, "#content_inner .col-sm-6.h3")
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, "#content_inner p")
+
+
 class LoginPageLocators:
     LOGIN_URL = ("http://selenium1py.pythonanywhere.com/en-gb/accounts/login/")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
