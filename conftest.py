@@ -1,9 +1,7 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as OptionsFirefox
-from selenium.webdriver.support.wait import WebDriverWait
 
 
 # for correct display of Cyrillic in parameterizers
@@ -39,3 +37,5 @@ def browser(request):
     yield driver
     print("\n quit browser")
     driver.quit()
+
+

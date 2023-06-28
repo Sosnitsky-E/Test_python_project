@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 
 from pages.locators import BasePageLocators
+from faker import Faker
 
 
 class BasePage:
@@ -43,9 +44,9 @@ class BasePage:
             return False
         return True
 
-    def is_not_element_present(self, haw, what, timeout = 4):
+    def is_not_element_present(self, haw, what, timeout=4):
         try:
-            wait(self.browser, timeout).until(EC.presence_of_element_located((haw,what)))
+            wait(self.browser, timeout).until(EC.presence_of_element_located((haw, what)))
         except TimeoutException:
             return True
         return False
@@ -59,3 +60,17 @@ class BasePage:
 
     def find_element_and_click(self, locator):
         self.browser.find_element(*locator).click()
+
+    def new_user_name_abd_email_generaror(self):
+        """
+        The method generates random name, email, and password for user registration.
+        """
+        f = Faker()
+        email = f.email()
+        name = f.name()
+        password = "!" + f.passport_number()
+        return {"name": name, "email": email, "password": password}
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
