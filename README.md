@@ -2,6 +2,8 @@ This project demonstrates the work of automation testing using Python (Pytest) +
 
 
 How to work with this repository:
+
+
 Clone repository to your machine.
 
 Navigate to the root folder of the project.
