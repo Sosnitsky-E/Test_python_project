@@ -1,4 +1,6 @@
 This project demonstrates the work of automation testing using Python (Pytest) + Selenium on some pages of the bookstore.
+
+
 How to work with this repository:
 Clone repository to your machine.
 
